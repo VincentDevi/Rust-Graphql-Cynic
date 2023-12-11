@@ -15,7 +15,8 @@ pub async fn films_query(_wow: i32) -> Vec<Option<Film>> {
         .unwrap();
     response
         .json::<GraphQlResponse<FilmsQuery>>()
-        .await?
+        .await
+        .unwrap()
         .data
         .unwrap()
         .all_films
