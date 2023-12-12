@@ -1,15 +1,17 @@
+use serde::Serialize;
+
 mod schema {
     cynic::use_schema!("schema.graphql");
 }
 
-#[derive(cynic::QueryFragment, Debug)]
+#[derive(cynic::QueryFragment, Debug, Serialize, Clone)]
 #[cynic(graphql_type = "Query")]
 pub struct MyQuery {
     #[arguments(first: 5)]
     pub orders: Vec<Order>,
 }
 
-#[derive(cynic::QueryFragment, Debug)]
+#[derive(cynic::QueryFragment, Debug, Serialize, Clone)]
 pub struct Order {
     pub category: Category,
 }

@@ -1,5 +1,5 @@
 /target
-idea
-public
-node_modules
-dist
+/idea
+/public
+/node_modules
+/dist

@@ -1,9 +1,10 @@
-mod routes;
+mod errors;
 mod pages;
+mod routes;
 
 use leptos::*;
 use routes::*;
 
 fn main() {
-    mount_to_body(||view! { <AppRouter/> })
+    mount_to_body(|| view! { <AppRouter/> })
 }
